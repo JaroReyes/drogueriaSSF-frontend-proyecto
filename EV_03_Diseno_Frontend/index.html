@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drogueriaSSF - Front-End EV03</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado drogueriaSSF -->
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="img/logo.png" alt="Logo drogueriaSSF" class="logo-img" onerror="this.style.display='none'">
+      <h1 class="brand-title">drogueria<span>SSF</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+        <li><a href="#registro" class="nav-link">Registro</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="main-container">
+    
+    <!-- Sección Tarjeta de Producto de Farmacia -->
+    <section>
+      <h2 style="text-align: center; margin-bottom: 20px; color: var(--color-primary);">Catálogo de Medicamentos</h2>
+      <article class="product-card">
+        <div class="card-image-container">
+          <img src="img/acetaminofen.jpg" alt="Acetaminofén 500mg" class="card-image">
+          <span class="card-badge">Disponible</span>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Acetaminofén 500mg</h3>
+          <p class="card-description">Caja x 20 tabletas. Analgésico y antipirético de rápida acción.</p>
+          <div class="card-footer-info">
+            <span class="card-price">$ 8.500 COP</span>
+            <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección Formulario -->
+    <section class="form-section">
+      <h2 class="form-title">Registro de Usuarios / Clientes</h2>
+      <form class="custom-form" id="formRegistro" action="#" method="POST">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre Completo *</label>
+          <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ej. Jose Arnulfo Reyes" required minlength="3">
+        </div>
+
+        <div class="form-group">
+          <label for="documento">Número de Documento *</label>
+          <input type="text" id="documento" name="documento" class="form-input" placeholder="Solo números" required pattern="[0-9]{7,10}" title="Ingrese un número de documento válido de 7 a 10 dígitos">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico *</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="usuario@dominio.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tipoUsuario">Tipo de Perfil</label>
+          <select id="tipoUsuario" name="tipoUsuario" class="form-input">
+            <option value="cliente">Cliente / Usuario</option>
+            <option value="regente">Regente / Farmacéutico</option>
+            <option value="administrador">Administrador</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-full">Registrar</button>
+        </div>
+        
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

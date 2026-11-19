@@ -1,0 +1,9 @@
+/* Variables Globales y Criterios WCAG 2.1 AA */
+:root {
+    --primary-blue: #0056b3;       /* Azul institucional */
+    --primary-green: #1e7e34;      /* Verde institucional accesible */
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;          /* Texto oscuro de alta legibilidad */
+    --border-radius: 8px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droguería SSF — Gestión de Componentes Frontend</title>
+    <style>
+        /* Variables Globales */
+        :root {
+            --primary-blue: #0056b3;
+            --primary-green: #1e7e34;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --border-radius: 8px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 2rem;
+        }
+
+        /* Encabezado Principal */
+        .main-header {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .brand-logo {
+            background-color: #ffffff;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Navegación */
+        .main-nav .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Contenedor Principal */
+        .main-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-block {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .section-block h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Tarjeta de Producto */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-producto {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sku-code {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .producto-nombre {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .producto-categoria {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .producto-metrica {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .producto-precio {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        /* Formulario */
+        .form-grid {
+            display: grid;
+            gap: 1.25rem;
+            max-width: 600px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            padding: 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        /* Botones */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+        }
+
+        .btn-success {
+            background-color: var(--primary-green);
+            color: #ffffff;
+        }
+
+        /* Pie de página */
+        .main-footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Global -->
+    <header class="main-header" role="banner">
+        <div class="brand-container">
+            <img src="img/logo_drogueria.jpg" alt="Logotipo oficial de Droguería SSF" width="180" height="60" class="brand-logo">
+            <h1 class="brand-title">Droguería SSF — Módulo de Gestión</h1>
+        </div>
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ol class="nav-list">
+                <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                <li><a href="#inventario" class="nav-link">Inventario</a></li>
+                <li><a href="#registro" class="nav-link">Registrar Producto</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-container">
+        
+        <!-- Sección de Inventario / Catálogo -->
+  <section id="inventario" class="section-block">
+    <h2 class="section-title">Catálogo de Productos e Inventario</h2>
+    
+    <div class="catalog-container">
+        <!-- Barra lateral de filtros (Aside) -->
+        <aside class="sidebar-filtros" aria-label="Filtros del catálogo">
+            <h3 class="filter-title">Filtrar Productos</h3>
+            
+            <div class="filter-group">
+                <label for="filtro-categoria">Categoría:</label>
+                <select id="filtro-categoria" class="form-control">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="analgesicos">Analgésicos y Antiinflamatorios</option>
+                    <option value="antibioticos">Antibióticos</option>
+                    <option value="cuidado-personal">Cuidado Personal</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filtro-disponibilidad">Disponibilidad:</label>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="stock-disponible" checked>
+                    <label for="stock-disponible">Solo en Stock</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label for="filtro-precio">Rango de Precio:</label>
+                <select id="filtro-precio" class="form-control">
+                    <option value="todos">Todos los precios</option>
+                    <option value="0-5000">Hasta $ 5.000 COP</option>
+                    <option value="5000-20000">$ 5.000 - $ 20.000 COP</option>
+                </select>
+            </div>
+        </aside>
+
+        <!-- Contenedor principal de tarjetas -->
+        <div class="cards-grid">
+            <article class="card-producto" data-id="101">
+                <div class="card-header">
+                    <span class="badge badge-success">Stock Disponible</span>
+                    <span class="sku-code">SKU: MED-7701</span>
+                </div>
+                <div class="producto-imagen-container">
+                    <img src="img/acetaminofen.jpg" 
+                         alt="Caja de Acetaminofén 500 mg" 
+                         width="120" 
+                         height="120" 
+                         class="producto-img">
+                </div>
+                <h3 class="producto-nombre">Acetaminofén 500 mg</h3>
+                <p class="producto-categoria">Categoría: Analgésicos y Antiinflamatorios</p>
+                <div class="producto-metrica">
+                    <span class="producto-precio">$ 2.500 COP</span>
+                    <span class="producto-stock">Existencias: <strong>45 unidades</strong></span>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="consultarStock('MED-7701')">
+                    Ver Detalle
+                </button>
+            </article>
+        </div>
+    </div>
+</section>
+
+        <!-- Sección de Formulario de Registro -->
+        <section id="registro" class="section-block form-section">
+            <h2>Registro e Ingreso de Medicamentos</h2>
+            <form id="formInventario" class="form-grid">
+                <div class="form-group">
+                    <label for="codigoSku">Código SKU / Barras:</label>
+                    <input type="text" id="codigoSku" name="codigoSku" placeholder="Ej. 770123456789" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreProducto">Nombre Comercial del Producto:</label>
+                    <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidadStock">Cantidad Inicial:</label>
+                    <input type="number" id="cantidadStock" name="cantidadStock" min="1" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success">Guardar Medicamento</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Droguería SSF. Todos los derechos reservados. Centro de Gestión Tecnológica de Servicios (CGTS) - SENA.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

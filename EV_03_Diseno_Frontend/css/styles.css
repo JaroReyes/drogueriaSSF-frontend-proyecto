@@ -1,0 +1,240 @@
+/* css/styles.css - Estilos Globales y Maquetación Flexbox */
+@import url('variables.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.main-header {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--color-surface);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fbbf24;
+}
+
+/* Contenedor Principal */
+.main-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Componente Tarjeta de Producto */
+.product-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #e2e8f0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Componente Formularios */
+.form-section {
+  background-color: var(--color-surface);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.form-input {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Adaptabilidad Mobile First / Responsive */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* Ajustes específicos para el Logo de drogueriaSSF */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.brand-title span {
+  color: #fbbf24; /* Resaltado de las siglas SSF */
+}

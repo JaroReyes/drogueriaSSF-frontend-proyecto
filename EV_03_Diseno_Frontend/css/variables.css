@@ -1,0 +1,23 @@
+/* css/variables.css - Centralización de Tokens de Diseño */
+:root {
+  /* Paleta de Colores Primaria y Secundaria */
+  --color-primary: #1e3a8a;       /* Azul Institucional */
+  --color-primary-hover: #1d4ed8; /* Azul Estado Hover */
+  --color-secondary: #0f766e;     /* Verde de Acento */
+  --color-bg-main: #f8fafc;        /* Fondo Principal Claro */
+  --color-surface: #ffffff;        /* Fondo de Tarjetas y Formas */
+  --color-text: #334155;           /* Color de Texto Principal */
+  --color-text-muted: #64748b;     /* Texto Secundario/Deshabilitado */
+  --color-border: #cbd5e1;         /* Bordes Contenedores */
+  --color-error: #dc2626;          /* Mensajes de Error */
+  
+  /* Fuentes y Tipografía */
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-base: 16px;
+  --font-size-heading: 24px;
+
+  /* Espaciados y Bordes */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition-fast: 0.3s ease;
+}

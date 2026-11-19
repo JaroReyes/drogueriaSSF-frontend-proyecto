@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droguería SSF - Módulo de Consulta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado de la Droguería -->
+    <header>
+        <h1>Droguería SSF</h1>
+        <p>Sistema de Gestión e Información de Medicamentos</p>
+    </header>
+
+    <!-- Menú e Índice con Lista Ordenada (Cumple Criterio #4) -->
+    <nav>
+        <h2>Menú del Módulo</h2>
+        <ol>
+            <li><a href="#informacion">1. Información de la Droguería</a></li>
+            <li><a href="#catalogo">2. Catálogo de Productos</a></li>
+            <li><a href="#consulta">3. Consulta de Disponibilidad</a></li>
+        </ol>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección 1 -->
+        <section id="informacion">
+            <h2>1. Información de la Droguería</h2>
+            <p>
+                Módulo básico desarrollado para la atención e inventario de la droguería rural, 
+                garantizando el registro claro de productos de salud.
+            </p>
+
+            <!-- Imagen con dimensiones explícitas (Cumple Criterio #2) -->
+            <div class="card-media">
+                <img src="img/logo_drogueria.jpg" 
+                     alt="Logo Droguería SSF" 
+                     width="300" 
+                     height="200">
+                <p class="caption">Figura 1: Registro e imagen institucional de Droguería SSF.</p>
+            </div>
+
+            <p>
+                Para consultar más información sobre la normatividad del INVIMA, visita:
+                <a href="https://www.invima.gov.co" target="_blank" rel="noopener noreferrer">
+                    Portal Oficial INVIMA Colombia
+                </a>.
+            </p>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="catalogo">
+            <h2>2. Catálogo de Productos</h2>
+            <p>
+                El sistema permite la clasificación de analgésicos, antibióticos y suministros de primeros auxilios.
+            </p>
+        </section>
+
+        <!-- Sección 3 -->
+        <section id="consulta">
+            <h2>3. Consulta de Disponibilidad</h2>
+            <p>Presiona el botón para verificar el estado del inventario de la droguería:</p>
+            <button id="btnConsultar">Consultar Inventario</button>
+            <div id="resultado" class="box-resultado"></div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Droguería SSF - SENA ADSO | Jose Arnulfo Reyes</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

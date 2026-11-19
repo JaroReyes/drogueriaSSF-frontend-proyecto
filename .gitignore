@@ -1,0 +1,17 @@
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuraciones locales de Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Archivos comprimidos, respaldos y temporales
+*.zip
+*.log
+*.tmp
+*.bak
+
+# Variables de entorno y credenciales locales
+.env
